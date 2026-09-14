@@ -4,21 +4,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Dose Lab — see what a supplement label actually contains</title>
-<meta name="description" content="A proprietary blend hides every dose inside it — but the FDA still requires descending order by weight, so the maximum any ingredient can be is arithmetic. Put a supplement label in and see the shortfall.">
+<meta name="description" content="A proprietary blend hides every dose inside it — but the FDA still requires descending order by weight, so the maximum any ingredient can be is arithmetic. Put a label in and compare it against the ranges used in trials.">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#060810">
 <link rel="canonical" href="https://REPLACE-WITH-LIVE-URL/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Zee Palm Labs">
 <meta property="og:title" content="Dose Lab">
-<meta property="og:description" content="A proprietary blend hides every dose inside it — but the FDA still requires descending order by weight, so the maximum any ingredient can be is arithmetic. Put a supplement label in and see the shortfall.">
+<meta property="og:description" content="A proprietary blend hides every dose inside it — but the FDA still requires descending order by weight, so the maximum any ingredient can be is arithmetic. Put a label in and compare it against the ranges used in trials.">
 <meta property="og:url" content="https://REPLACE-WITH-LIVE-URL/">
 <meta property="og:image" content="https://REPLACE-WITH-LIVE-URL/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Dose Lab">
-<meta name="twitter:description" content="A proprietary blend hides every dose inside it — but the FDA still requires descending order by weight, so the maximum any ingredient can be is arithmetic. Put a supplement label in and see the shortfall.">
+<meta name="twitter:description" content="A proprietary blend hides every dose inside it — but the FDA still requires descending order by weight, so the maximum any ingredient can be is arithmetic. Put a label in and compare it against the ranges used in trials.">
 <meta name="twitter:image" content="https://REPLACE-WITH-LIVE-URL/og-image.png">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%F0%9F%A7%AA</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -254,7 +254,7 @@ h1{font-size:29px;font-weight:700;letter-spacing:-.03em;margin:0 0 7px;line-heig
   <div class="ins" id="ins"></div>
   <div id="cap"></div>
   <div class="stagefoot">
-    <span class="lg"><i class="ring"></i>One effective dose</span>
+    <span class="lg"><i class="ring"></i>Low end of studied range</span>
     <span class="lg"><i style="background:var(--short)"></i>Missing</span>
     <span class="lg"><i style="background:#E9E2D2"></i>Present</span>
     <span class="hint">Drag to orbit · scroll to zoom · click a vial</span>
@@ -266,7 +266,7 @@ h1{font-size:29px;font-weight:700;letter-spacing:-.03em;margin:0 0 7px;line-heig
     <div class="sec">
       <div class="brandrow"><span class="dotmark"></span><span class="brand">Zee Palm Labs · open source</span></div>
       <h1>Dose Lab</h1>
-      <p class="sub">Every vial fills to one effective dose. The etched ring is that line. Anything below it is a shortfall you paid for.</p>
+      <p class="sub">Each vial fills toward the low end of its commonly studied range. The etched ring marks that line — anything below it, the label has not paid for.</p>
     </div>
 
     <div class="sec">
@@ -299,13 +299,13 @@ h1{font-size:29px;font-weight:700;letter-spacing:-.03em;margin:0 0 7px;line-heig
     <h4>The bound nobody can argue with</h4>
     <p><b>21 CFR 101.36</b> lets a manufacturer hide the dose of every ingredient inside a proprietary blend — but it requires those ingredients to be listed <b>in descending order by weight</b>, and it requires the blend's total weight on the label.</p>
     <p>Those two rules together produce a hard ceiling. If an ingredient is listed <code>k</code>th, every ingredient above it weighs at least as much, so <code>k</code> of them together cannot exceed the blend total. Therefore that ingredient is at most <code>total ÷ k</code>.</p>
-    <p>When <code>total ÷ k</code> lands below the researched effective dose, the shortfall is not an estimate or an accusation — it is arithmetic that follows from the label's own declared numbers.</p>
+    <p>When <code>total ÷ k</code> lands below the range those trials used, the shortfall is not an estimate or an accusation — it is arithmetic that follows from the label's own declared numbers.</p>
     <h4>Why every vial fills to the same line</h4>
-    <p>A vial's fill is the fraction of <b>its own</b> effective dose that is present, not an absolute weight. Creatine at 5&nbsp;g and zinc at 20&nbsp;mg are three orders of magnitude apart, so plotting raw mass would make everything but the largest ingredient invisible. Filling each to its own target puts the ring at one height across the row, which is what makes a gap readable at a glance.</p>
+    <p>A vial's fill is measured against the low end of <b>its own</b> studied range, not against an absolute weight. Creatine at 5&nbsp;g and zinc at 20&nbsp;mg are three orders of magnitude apart, so plotting raw mass would make everything but the largest ingredient invisible. Filling each to its own target puts the ring at one height across the row, which is what makes a gap readable at a glance.</p>
     <h4>The mass check</h4>
-    <p>Separately, the panel adds up one effective dose of every active and compares that total to the declared weight and to the serving size. A formula whose effective version outweighs its own scoop cannot be dosed properly at that serving, whatever the label says.</p>
+    <p>Separately, the panel adds up the low end of every active's studied range and compares that total to the declared weight and to the serving size. A formula whose studied doses outweigh its own scoop cannot carry them at that serving, whatever the label says.</p>
     <h4>What this is not</h4>
-    <p class="fine">Educational tool, not medical, nutritional or regulatory advice, and not a compliance review. Dose ranges are commonly cited effective ranges from human trials in healthy adults, summarised for teaching — they are not personalised, they take no account of body mass, stacking, tolerance, or any medical condition, and reputable sources disagree at the margins. "Provably short" describes only the arithmetic ceiling created by the descending-order rule; it is a statement about what a declared blend weight can physically contain, never an allegation about any manufacturer. All example products are invented. Nothing you do here leaves your browser. Speak to a doctor or a registered dietitian before changing what you take.</p>
+    <p class="fine">Educational tool, not medical, nutritional or regulatory advice, and not a compliance review. Dose ranges are the ranges commonly used in human trials in healthy adults, summarised for teaching. There is no universally correct dose for a supplement: it depends on the ingredient, formulation, population, goal and the state of the evidence. They are not personalised, they take no account of body mass, stacking, tolerance, or any medical condition, and reputable sources disagree at the margins. Where the tool says an amount falls below a range, that is a comparison against those trials, not a claim that a person needs that amount. "Below it, by arithmetic" describes only the ceiling created by the descending-order rule; it is a statement about what a declared blend weight can physically contain, never an allegation about any manufacturer. All example products are invented. Nothing you do here leaves your browser. Speak to a doctor or a registered dietitian before changing what you take.</p>
   </div>
 </div>
 
@@ -328,7 +328,7 @@ function loadDoseData(){
       Object.keys(ing).forEach(function(key){
         var v=ing[key];
         ING[key]={n:v.name,u:v.unit,k:v.mgPerUnit,
-                  lo:v.effectiveDose.low,hi:v.effectiveDose.high,
+                  lo:v.referenceRange.low,hi:v.referenceRange.high,
                   ev:v.evidence,does:v.mechanism,note:v.note};
         COLOR[key]=v.colour;
       });
@@ -644,9 +644,9 @@ function pick(e){
 }
 
 /* ---------------- panels ---------------- */
-var LBL={ok:["At an effective dose","good"],impossible:["Provably short","bad"],
-  under:["Below effective range","bad"],hidden:["Unverifiable","neut"],
-  none:["No established dose","neut"],caution:["Above nutritional need","warn"]};
+var LBL={ok:["Within the studied range","good"],impossible:["Below it, by arithmetic","bad"],
+  under:["Below the studied range","bad"],hidden:["Not stated","neut"],
+  none:["No studied dose","neut"],caution:["Above nutritional need","warn"]};
 
 function select(i){
   state.sel=i;
@@ -663,8 +663,9 @@ function select(i){
   if(rec.ratio!=null){
     html+='<div class="nums">'+
       '<div><b>'+(rec.inBlend?"At most":"On label")+'</b><span>'+fmt(rec.inBlend?rec.capMg:rec.val*g.k)+' mg</span></div>'+
-      '<div><b>Effective</b><span>'+fmt(rec.loMg)+' mg</span></div>'+
-      '<div><b>Of a dose</b><span'+(rec.ratio<1?' style="color:var(--short)"':'')+'>'+
+      '<div><b>Commonly studied</b><span>'+fmt(rec.loMg)+
+        (g.hi>g.lo?("–"+fmt(g.hi*g.k)):"")+' mg</span></div>'+
+      '<div><b>Of the low end</b><span'+(rec.ratio<1?' style="color:var(--short)"':'')+'>'+
         (rec.inBlend?"≤":"")+Math.round(Math.min(rec.ratio,9.9)*100)+'%</span></div></div>';
   }
 
@@ -689,21 +690,21 @@ function steps(rec){
       L.push('So '+rec.pos+' × (this) ≤ '+fmt(p.blend.total)+' mg, giving this ≤ <em>'+
         fmt(Math.round(rec.capMg))+' mg</em>.');
     }
-    L.push('An effective dose is <em>'+fmt(rec.loMg)+' mg</em>.');
+    L.push('The studied range starts at <em>'+fmt(rec.loMg)+' mg</em>.');
     if(rec.st==="impossible"){
       if(p.blend.total<rec.loMg)
-        L.push('The whole blend weighs less than one dose. Short by at least '+
+        L.push('The whole blend weighs less than the low end. Short by at least '+
           fmt(Math.round(rec.loMg-rec.capMg))+' mg.');
       else
         L.push('Short by at least '+fmt(Math.round(rec.loMg-rec.capMg))+' mg.');
     } else {
       calm=true;
-      L.push('That ceiling clears the dose — the label simply never says.');
+      L.push('That ceiling clears the low end — the label simply never says.');
     }
   } else if(rec.st==="under"){
     L.push('The label states <em>'+fmt(rec.val*g.k)+' mg</em>.');
-    L.push('Trials use <em>'+fmt(rec.loMg)+' mg</em>.');
-    L.push('That is '+Math.round(rec.ratio*100)+'% of one dose, short by '+fmt(Math.round(rec.loMg-rec.val*g.k))+' mg.');
+    L.push('Trials generally use <em>'+fmt(rec.loMg)+' mg</em> or more.');
+    L.push('That is '+Math.round(rec.ratio*100)+'% of the low end, short by '+fmt(Math.round(rec.loMg-rec.val*g.k))+' mg.');
   } else if(rec.st==="caution"){
     L.push('The label states <em>'+fmt(rec.val*g.k)+' mg</em>.');
     L.push('Nutritional need is met at <em>'+fmt(rec.loMg)+' mg</em>.');
@@ -737,20 +738,20 @@ function renderFormula(recs){
   var shortfall=f.need>f.have;
   var say;
   if(f.serving&&f.need>f.serving){
-    say='An honestly dosed version needs <b>'+fmt(Math.round(f.need))+' mg</b> of actives. '+
+    say='Matching the studied ranges would need <b>'+fmt(Math.round(f.need))+' mg</b> of actives. '+
       'The entire serving weighs <b>'+fmt(f.serving)+' mg</b> — before a grain of flavouring. '+
       '<b class="hot">This formula cannot fit inside its own scoop.</b>';
   } else if(shortfall){
-    say='Effective doses of everything here would need <b>'+fmt(Math.round(f.need))+' mg</b>. '+
+    say='Matching the studied ranges would need <b>'+fmt(Math.round(f.need))+' mg</b>. '+
       'The label accounts for <b>'+fmt(Math.round(f.have))+' mg</b>. '+
       '<b class="hot">Short by '+fmt(Math.round(f.need-f.have))+' mg</b> across the formula.';
   } else {
-    say='<b class="good">The formula carries its own weight.</b> Effective doses need '+
+    say='<b class="good">The formula carries its own weight.</b> The studied ranges need '+
       fmt(Math.round(f.need))+' mg and the label accounts for '+fmt(Math.round(f.have))+' mg.';
   }
   box.innerHTML='<p class="seclab"><span>Does the formula fit?</span><span>mass check</span></p>'+
     '<div class="bars">'+
-      bar("Effective doses need",f.need,"#7FD8F5")+
+      bar("Studied ranges need",f.need,"#7FD8F5")+
       bar("This label accounts for",f.have,shortfall?"#FF4F63":"#5EE9B5")+
       (f.serving?bar("One serving weighs",f.serving,"rgba(255,255,255,.5)"):"")+
     '</div><p class="fxsay">'+say+'</p>';
@@ -830,9 +831,10 @@ function renderVerdict(recs){
   document.getElementById("vBig").textContent=c.ok+"/"+recs.length;
   var bad=c.impossible+c.under+c.caution;
   document.getElementById("vTxt").innerHTML =
-    c.ok===recs.length ? "ingredients at an effective dose &mdash; every one of them"
-    : (c.impossible ? "at an effective dose. <b>"+c.impossible+" cannot be</b>, by arithmetic."
-       : (bad ? "at an effective dose. <b>"+bad+" fall short</b>." : "at an effective dose."));
+    c.ok===recs.length ? "within their commonly studied ranges &mdash; every one of them"
+    : (c.impossible ? "within the commonly studied range. <b>"+c.impossible+" cannot be</b>, by arithmetic."
+       : (bad ? "within the commonly studied range. <b>"+bad+" fall short</b>."
+              : "within the commonly studied range."));
   var m=document.getElementById("meter"); m.innerHTML="";
   [["ok","#5EE9B5"],["caution","#FFC061"],["impossible","#FF4F63"],["under","#FF4F63"],
    ["hidden","rgba(143,227,255,.45)"],["none","rgba(255,255,255,.14)"]].forEach(function(p){
@@ -858,7 +860,7 @@ function renderStats(recs){
       (unit?'<u>'+unit+'</u>':'')+'</span></span></div>';
   }
   box.innerHTML=
-    card(ICON.flask,"Effective doses need",fmt(Math.round(f.need)),"mg","")+
+    card(ICON.flask,"Studied ranges need",fmt(Math.round(f.need)),"mg","")+
     card(ICON.tag,"This label accounts for",fmt(Math.round(f.have)),"mg",f.have<f.need?"var(--short)":"var(--okc)")+
     card(ICON.gap,"Formulation gap",(gap>0?"+":"")+gap,"%",gap<0?"var(--short)":"var(--okc)");
 }
@@ -873,19 +875,19 @@ function renderInsights(recs){
     out.push('<div class="ic"><h5><i style="background:'+col+'"></i>'+head+'</h5><p>'+body+'</p></div>');
   }
   if(imp) card("bad","Provably short",
-    '<b>'+imp+'</b> ingredient'+(imp===1?" is":"s are")+' below an effective dose no matter how the blend is arranged.');
+    '<b>'+imp+'</b> ingredient'+(imp===1?" is":"s are")+' below the studied range no matter how the blend is arranged.');
   else if(und) card("bad","Under-dosed",
     '<b>'+und+'</b> ingredient'+(und===1?" sits":"s sit")+' below the range used in trials.');
   if(f.serving&&f.need>f.serving) card("bad","Does not fit",
     'Dosing this properly needs <b>'+fmt(Math.round(f.need))+' mg</b> — more than the whole <b>'+fmt(f.serving)+' mg</b> serving.');
   else if(f.need>f.have) card("warn","Mass shortfall",
-    'The label is <b>'+fmt(Math.round(f.need-f.have))+' mg</b> short of effective doses across the formula.');
+    'The label is <b>'+fmt(Math.round(f.need-f.have))+' mg</b> short of the studied ranges across the formula.');
   if(hid) card("warn","Unverifiable",
     '<b>'+hid+'</b> ingredient'+(hid===1?"":"s")+' could be adequate, but the blend never states the amount.');
   if(p.blend) card("good","What to ask for",
     'Request the full blend breakdown, or choose a label that discloses every dose.');
   else if(!imp&&!und) card("good","Fully disclosed",
-    'Every dose is stated and meets its researched range. This is what a transparent label looks like.');
+    'Every dose is stated and reaches its studied range. This is what a transparent label looks like.');
   box.innerHTML=out.slice(0,4).join("");
 }
 
@@ -948,16 +950,16 @@ var SCRIPT=[
                           cap('So the ceiling is arithmetic.'); }},
  {t:12000, go:function(){ cap('L-Citrulline sits 2nd in a 2,400 mg blend.'); }},
  {t:16000, go:function(){ camTo(0.26,0.99,0.80);
-                          cap('It cannot exceed 1,200 mg. A dose is <em>6,000</em>.'); }},
+                          cap('It cannot exceed 1,200 mg. Trials use <em>6,000+</em>.'); }},
  {t:20500, go:function(){ select(null); sbTo("fx"); camTo(-0.22,1.12,1.02);
                           cap('Now weigh the whole formula.'); }},
- {t:24500, go:function(){ cap('Dosing it properly needs <em>13,616 mg</em>. The scoop holds <em>9,500</em>.'); }},
+ {t:24500, go:function(){ cap('Matching the studied ranges needs <em>13,616 mg</em>. The scoop holds <em>9,500</em>.'); }},
  {t:29500, go:function(){ camTo(0.10,1.06,0.96);
                           cap('<s>It does not fit inside its own scoop.</s>'); }},
  {t:34000, go:function(){ load(byId("greens")); sbTo("fx"); camTo(-0.26,1.04,1.00);
-                          cap('A greens powder: <s>0 of 9</s> at an effective dose.'); }},
+                          cap('A greens powder: <s>0 of 9</s> reach their studied range.'); }},
  {t:39000, go:function(){ load(byId("open")); sbTo("fx"); camTo(0.24,1.00,0.98);
-                          cap('A fully disclosed label: <em>7 of 7</em>.'); }},
+                          cap('A fully disclosed label: <em>7 of 7</em> in range.'); }},
  {t:44000, go:function(){ camTo(-0.18,1.07,0.94);
                           cap('Every dose stated. Every one in range.'); }},
  {t:48500, go:function(){ load(byId("blend")); setEdit(true); camTo(0.0,1.05,1.00);

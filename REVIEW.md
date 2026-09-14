@@ -1,6 +1,6 @@
 # Reviewing the dose ranges
 
-`data/ingredients.json` drives every claim this tool makes. One wrong `effectiveDose.low`
+`data/ingredients.json` drives every claim this tool makes. One wrong `referenceRange.low`
 and the whole thing is dismissable, because the entire appeal is that the arithmetic is
 not arguable. **Nothing in it has been checked by a qualified person yet.** Every entry
 carries `"review": {"status": "unverified"}` until someone signs it off.
@@ -19,7 +19,7 @@ new numbers — only to confirm or correct a published range and attach a citati
 
 ## What to ask for, exactly
 
-> For each ingredient, is `effectiveDose.low` a defensible lower bound for the dose used in
+> For each ingredient, is `referenceRange` a defensible summary of the doses used in
 > human trials in healthy adults? If not, what should it be, and what is your source?
 
 `low` is the only number that matters. It is the threshold everything is measured against —
@@ -78,7 +78,7 @@ Fill in the `review` block per ingredient and open a PR:
 ```
 
 `status` is one of `unverified`, `verified`, `corrected`. If a value changes, change it in
-`effectiveDose` too — the tool reads that, not the review block.
+`referenceRange` too — the tool reads that, not the review block.
 
 ## Three things to flag to the reviewer
 
