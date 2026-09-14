@@ -5,7 +5,8 @@
     "mgPerUnit": "Multiplier converting one unit to milligrams. Drives the blend arithmetic.",
     "effectiveDose.low": "Lower bound of the researched range. This is the threshold the tool compares against.",
     "evidence": "strong | moderate | weak | none | caution. 'none' means no dose has been shown to produce the marketed effect. 'caution' means the concern is excess rather than shortfall.",
-    "colour": "Powder colour in the 3D view. Cosmetic only."
+    "colour": "Powder colour in the 3D view. Cosmetic only.",
+    "review": "status: unverified | verified | corrected. source: a citation for effectiveDose - a DOI, PubMed ID, an ISSN position stand, or an Examine.com page. Nothing here has been checked by a qualified person yet; see REVIEW.md."
   },
   "ingredients": {
     "caffeine": {
@@ -20,7 +21,13 @@
       "evidence": "strong",
       "colour": "#F2EFE8",
       "mechanism": "Blocks adenosine, so fatigue signalling is muted. The most reliably effective ergogenic aid there is.",
-      "note": "Roughly 3-6 mg per kg of bodyweight. Above about 400 mg in one sitting the returns stop and the side effects don't."
+      "note": "Roughly 3-6 mg per kg of bodyweight. Above about 400 mg in one sitting the returns stop and the side effects don't.",
+      "review": {
+        "status": "unverified",
+        "source": null,
+        "checkedBy": null,
+        "checkedOn": null
+      }
     },
     "betaAlanine": {
       "name": "Beta-alanine",
@@ -34,7 +41,13 @@
       "evidence": "strong",
       "colour": "#F6F3ED",
       "mechanism": "Raises muscle carnosine, which buffers the acidity that ends a hard set. Helps most in the 60-240 second effort range.",
-      "note": "Works by saturating muscle carnosine over weeks, so a single dose does nothing acutely. The tingle is not the effect."
+      "note": "Works by saturating muscle carnosine over weeks, so a single dose does nothing acutely. The tingle is not the effect.",
+      "review": {
+        "status": "unverified",
+        "source": null,
+        "checkedBy": null,
+        "checkedOn": null
+      }
     },
     "citrulline": {
       "name": "L-Citrulline",
@@ -48,7 +61,13 @@
       "evidence": "strong",
       "colour": "#FBF8F2",
       "mechanism": "Converts to arginine in the kidneys and raises nitric oxide, improving blood flow and reducing perceived effort.",
-      "note": "One of the most reliably underdosed ingredients in the category, because it is expensive and bulky."
+      "note": "One of the most reliably underdosed ingredients in the category, because it is expensive and bulky.",
+      "review": {
+        "status": "unverified",
+        "source": null,
+        "checkedBy": null,
+        "checkedOn": null
+      }
     },
     "citMalate": {
       "name": "Citrulline malate (2:1)",
@@ -62,7 +81,13 @@
       "evidence": "strong",
       "colour": "#F3EEE4",
       "mechanism": "Citrulline plus malate, an intermediate in aerobic energy production. Dosed higher because only part of the weight is citrulline.",
-      "note": "A 2:1 blend is only two-thirds citrulline, so 8 g of citrulline malate delivers about 5.3 g of citrulline."
+      "note": "A 2:1 blend is only two-thirds citrulline, so 8 g of citrulline malate delivers about 5.3 g of citrulline.",
+      "review": {
+        "status": "unverified",
+        "source": null,
+        "checkedBy": null,
+        "checkedOn": null
+      }
     },
     "creatine": {
       "name": "Creatine monohydrate",
@@ -76,7 +101,13 @@
       "evidence": "strong",
       "colour": "#FFFFFF",
       "mechanism": "Regenerates ATP during short maximal efforts. Adds reps at the top end and increases total training volume over time.",
-      "note": "The most studied sports supplement there is. Monohydrate is the researched form; the exotic ones cost more and do not outperform it."
+      "note": "The most studied sports supplement there is. Monohydrate is the researched form; the exotic ones cost more and do not outperform it.",
+      "review": {
+        "status": "unverified",
+        "source": null,
+        "checkedBy": null,
+        "checkedOn": null
+      }
     },
     "betaine": {
       "name": "Betaine anhydrous",
@@ -90,7 +121,13 @@
       "evidence": "moderate",
       "colour": "#F0EDE6",
       "mechanism": "An osmolyte that helps cells hold water under load, with modest evidence for power output.",
-      "note": "Effective doses in trials sit between 2,400 and 4,000 mg taken before training."
+      "note": "Effective doses in trials sit between 2,400 and 4,000 mg taken before training.",
+      "review": {
+        "status": "unverified",
+        "source": null,
+        "checkedBy": null,
+        "checkedOn": null
+      }
     },
     "taurine": {
       "name": "Taurine",
@@ -104,7 +141,13 @@
       "evidence": "moderate",
       "colour": "#F7F4EE",
       "mechanism": "Regulates calcium handling and cell volume in working muscle. Mild but consistently measurable.",
-      "note": "Cheap, well tolerated, and frequently included at a fraction of the trial dose."
+      "note": "Cheap, well tolerated, and frequently included at a fraction of the trial dose.",
+      "review": {
+        "status": "unverified",
+        "source": null,
+        "checkedBy": null,
+        "checkedOn": null
+      }
     },
     "tyrosine": {
       "name": "L-Tyrosine",
@@ -118,7 +161,13 @@
       "evidence": "moderate",
       "colour": "#F2EEE6",
       "mechanism": "A precursor to dopamine and noradrenaline, which get depleted under acute stress.",
-      "note": "Evidence is for acute stress and sleep deprivation rather than for training performance."
+      "note": "Evidence is for acute stress and sleep deprivation rather than for training performance.",
+      "review": {
+        "status": "unverified",
+        "source": null,
+        "checkedBy": null,
+        "checkedOn": null
+      }
     },
     "theanine": {
       "name": "L-Theanine",
@@ -132,7 +181,13 @@
       "evidence": "moderate",
       "colour": "#EFEBE1",
       "mechanism": "Raises alpha wave activity. Paired with caffeine it keeps the alertness and removes the edge.",
-      "note": "Usually paired with caffeine at roughly 1:1 to 2:1 to blunt the jitter."
+      "note": "Usually paired with caffeine at roughly 1:1 to 2:1 to blunt the jitter.",
+      "review": {
+        "status": "unverified",
+        "source": null,
+        "checkedBy": null,
+        "checkedOn": null
+      }
     },
     "alphaGPC": {
       "name": "Alpha-GPC",
@@ -146,7 +201,13 @@
       "evidence": "moderate",
       "colour": "#E6DFCF",
       "mechanism": "A choline source that crosses into the brain, used for acetylcholine synthesis and power output.",
-      "note": "One of the few nootropic additions with a defensible dose range."
+      "note": "One of the few nootropic additions with a defensible dose range.",
+      "review": {
+        "status": "unverified",
+        "source": null,
+        "checkedBy": null,
+        "checkedOn": null
+      }
     },
     "ashwagandha": {
       "name": "Ashwagandha extract",
@@ -160,7 +221,13 @@
       "evidence": "moderate",
       "colour": "#C9A472",
       "mechanism": "An adaptogen with reasonable evidence for lowering cortisol and perceived stress.",
-      "note": "Trials use standardised root extracts. An unstandardised powder at 50 mg is not the same product."
+      "note": "Trials use standardised root extracts. An unstandardised powder at 50 mg is not the same product.",
+      "review": {
+        "status": "unverified",
+        "source": null,
+        "checkedBy": null,
+        "checkedOn": null
+      }
     },
     "rhodiola": {
       "name": "Rhodiola rosea",
@@ -174,7 +241,13 @@
       "evidence": "moderate",
       "colour": "#B08355",
       "mechanism": "Studied for fatigue resistance and perceived exertion rather than raw strength.",
-      "note": "Standardised to rosavins and salidroside; unstandardised material tells you nothing."
+      "note": "Standardised to rosavins and salidroside; unstandardised material tells you nothing.",
+      "review": {
+        "status": "unverified",
+        "source": null,
+        "checkedBy": null,
+        "checkedOn": null
+      }
     },
     "beetroot": {
       "name": "Beetroot extract",
@@ -188,7 +261,13 @@
       "evidence": "moderate",
       "colour": "#A51F55",
       "mechanism": "A nitrate source. Nitrate converts to nitric oxide and lowers the oxygen cost of submaximal work.",
-      "note": "What matters is the nitrate content, which most labels do not declare at all."
+      "note": "What matters is the nitrate content, which most labels do not declare at all.",
+      "review": {
+        "status": "unverified",
+        "source": null,
+        "checkedBy": null,
+        "checkedOn": null
+      }
     },
     "hmb": {
       "name": "HMB",
@@ -202,7 +281,13 @@
       "evidence": "weak",
       "colour": "#F4F1EA",
       "mechanism": "A leucine metabolite studied for limiting muscle breakdown during hard training or a deficit.",
-      "note": "Trial dose is 3 g. Benefits look real in untrained people and largely vanish in trained ones."
+      "note": "Trial dose is 3 g. Benefits look real in untrained people and largely vanish in trained ones.",
+      "review": {
+        "status": "unverified",
+        "source": null,
+        "checkedBy": null,
+        "checkedOn": null
+      }
     },
     "arginine": {
       "name": "L-Arginine",
@@ -216,7 +301,13 @@
       "evidence": "weak",
       "colour": "#F6F3EC",
       "mechanism": "Intended as a nitric oxide precursor, but most of an oral dose is destroyed before it reaches circulation.",
-      "note": "Poor oral bioavailability - it is broken down before it does much. Citrulline raises arginine levels more effectively than arginine does."
+      "note": "Poor oral bioavailability - it is broken down before it does much. Citrulline raises arginine levels more effectively than arginine does.",
+      "review": {
+        "status": "unverified",
+        "source": null,
+        "checkedBy": null,
+        "checkedOn": null
+      }
     },
     "bcaa": {
       "name": "BCAAs",
@@ -230,7 +321,13 @@
       "evidence": "weak",
       "colour": "#F1EEE7",
       "mechanism": "Three amino acids your body cannot make. Already present in every complete protein you eat.",
-      "note": "Largely redundant if daily protein is adequate, because whole protein already contains them."
+      "note": "Largely redundant if daily protein is adequate, because whole protein already contains them.",
+      "review": {
+        "status": "unverified",
+        "source": null,
+        "checkedBy": null,
+        "checkedOn": null
+      }
     },
     "glutamine": {
       "name": "L-Glutamine",
@@ -244,7 +341,13 @@
       "evidence": "weak",
       "colour": "#F8F5EF",
       "mechanism": "The most abundant amino acid in the body. Genuinely useful clinically; hard to show a benefit in healthy trained adults.",
-      "note": "Well evidenced in clinical settings, thin evidence for healthy trained adults."
+      "note": "Well evidenced in clinical settings, thin evidence for healthy trained adults.",
+      "review": {
+        "status": "unverified",
+        "source": null,
+        "checkedBy": null,
+        "checkedOn": null
+      }
     },
     "tribulus": {
       "name": "Tribulus terrestris",
@@ -258,7 +361,13 @@
       "evidence": "none",
       "colour": "#9FAC63",
       "mechanism": "Marketed as a testosterone booster. Controlled trials do not find that effect.",
-      "note": "Repeatedly tested for raising testosterone and repeatedly found not to. There is no dose that fixes this."
+      "note": "Repeatedly tested for raising testosterone and repeatedly found not to. There is no dose that fixes this.",
+      "review": {
+        "status": "unverified",
+        "source": null,
+        "checkedBy": null,
+        "checkedOn": null
+      }
     },
     "huperzine": {
       "name": "Huperzine A",
@@ -272,7 +381,13 @@
       "evidence": "weak",
       "colour": "#D6E0C4",
       "mechanism": "An acetylcholinesterase inhibitor, so acetylcholine lingers. Active in microgrammes.",
-      "note": "Active in microgrammes, which makes it a cheap way to lengthen an ingredient list."
+      "note": "Active in microgrammes, which makes it a cheap way to lengthen an ingredient list.",
+      "review": {
+        "status": "unverified",
+        "source": null,
+        "checkedBy": null,
+        "checkedOn": null
+      }
     },
     "niacin": {
       "name": "Niacin (vitamin B3)",
@@ -286,12 +401,18 @@
       "evidence": "caution",
       "colour": "#F6E39A",
       "mechanism": "An essential B vitamin. In excess it dilates skin capillaries, which is the flush.",
-      "note": "The adult RDA is about 16 mg. Doses above that do nothing extra nutritionally, but from roughly 30 mg upward nicotinic acid causes flushing - a warm prickling across the skin that is very often mistaken for the product kicking in."
+      "note": "The adult RDA is about 16 mg. Doses above that do nothing extra nutritionally, but from roughly 30 mg upward nicotinic acid causes flushing - a warm prickling across the skin that is very often mistaken for the product kicking in.",
+      "review": {
+        "status": "unverified",
+        "source": null,
+        "checkedBy": null,
+        "checkedOn": null
+      }
     },
     "vitD": {
       "name": "Vitamin D3",
       "unit": "IU",
-      "mgPerUnit": 0.000025,
+      "mgPerUnit": 2.5e-05,
       "effectiveDose": {
         "low": 1000,
         "high": 4000,
@@ -300,7 +421,13 @@
       "evidence": "strong",
       "colour": "#FFD277",
       "mechanism": "A prohormone made in skin from sunlight. Deficiency is common indoors and at high latitudes.",
-      "note": "Meaningful supplementation starts around 1,000 IU for most adults."
+      "note": "Meaningful supplementation starts around 1,000 IU for most adults.",
+      "review": {
+        "status": "unverified",
+        "source": null,
+        "checkedBy": null,
+        "checkedOn": null
+      }
     },
     "magnesium": {
       "name": "Magnesium",
@@ -314,7 +441,13 @@
       "evidence": "strong",
       "colour": "#E8E8E4",
       "mechanism": "A cofactor in hundreds of enzyme reactions including muscle contraction and sleep regulation.",
-      "note": "Elemental magnesium, not the weight of the salt. Magnesium oxide is roughly 4% absorbed - the cheapest form on the shelf."
+      "note": "Elemental magnesium, not the weight of the salt. Magnesium oxide is roughly 4% absorbed - the cheapest form on the shelf.",
+      "review": {
+        "status": "unverified",
+        "source": null,
+        "checkedBy": null,
+        "checkedOn": null
+      }
     },
     "zinc": {
       "name": "Zinc",
@@ -328,7 +461,13 @@
       "evidence": "strong",
       "colour": "#D6DADE",
       "mechanism": "Essential for immune function and hormone production. Lost in sweat, so athletes run low more often.",
-      "note": "Upper limit is about 40 mg a day; chronic excess interferes with copper."
+      "note": "Upper limit is about 40 mg a day; chronic excess interferes with copper.",
+      "review": {
+        "status": "unverified",
+        "source": null,
+        "checkedBy": null,
+        "checkedOn": null
+      }
     },
     "omega3": {
       "name": "EPA + DHA",
@@ -342,7 +481,13 @@
       "evidence": "strong",
       "colour": "#FFBE4F",
       "mechanism": "Long-chain fats that regulate the inflammatory response and are structural in cell membranes.",
-      "note": "Read the EPA and DHA figures, not the total fish oil weight. A 1,000 mg capsule often carries 300 mg of actual omega-3."
+      "note": "Read the EPA and DHA figures, not the total fish oil weight. A 1,000 mg capsule often carries 300 mg of actual omega-3.",
+      "review": {
+        "status": "unverified",
+        "source": null,
+        "checkedBy": null,
+        "checkedOn": null
+      }
     },
     "collagen": {
       "name": "Collagen peptides",
@@ -356,7 +501,13 @@
       "evidence": "moderate",
       "colour": "#EDE2CE",
       "mechanism": "Supplies glycine and proline for connective tissue. Taken with vitamin C before loading the tendon.",
-      "note": "Trials use 10-15 g. Anything under a gram is there for the ingredient list."
+      "note": "Trials use 10-15 g. Anything under a gram is there for the ingredient list.",
+      "review": {
+        "status": "unverified",
+        "source": null,
+        "checkedBy": null,
+        "checkedOn": null
+      }
     },
     "sodium": {
       "name": "Sodium",
@@ -370,7 +521,13 @@
       "evidence": "strong",
       "colour": "#FFFFFF",
       "mechanism": "The electrolyte you lose most of in sweat. Drives fluid retention and nerve conduction.",
-      "note": "For sweat replacement during long or hot sessions. Context dependent rather than universally needed."
+      "note": "For sweat replacement during long or hot sessions. Context dependent rather than universally needed.",
+      "review": {
+        "status": "unverified",
+        "source": null,
+        "checkedBy": null,
+        "checkedOn": null
+      }
     }
   }
 }
