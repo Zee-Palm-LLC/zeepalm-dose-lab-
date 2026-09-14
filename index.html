@@ -82,6 +82,18 @@ body{background:var(--bg);color:var(--txt);font-family:var(--ui);font-size:14px;
 .ic p b{color:var(--txt);font-weight:600}
 @media (max-height:720px){.ins{display:none}}
 
+/* ---- demo captions ---- */
+#cap{position:absolute;left:6%;right:6%;bottom:64px;z-index:6;text-align:center;
+  opacity:0;transition:opacity .5s ease;pointer-events:none}
+#cap b{display:inline-block;max-width:22ch;font-size:clamp(19px,2.1vw,29px);font-weight:600;
+  letter-spacing:-.022em;line-height:1.28;color:#fff;text-wrap:balance;
+  text-shadow:0 2px 22px rgba(0,0,0,.92),0 1px 4px rgba(0,0,0,.8)}
+#cap.on{opacity:1}
+#cap em{font-style:normal;color:var(--cy)}
+#cap s{text-decoration:none;color:var(--short)}
+body.touring .ins,body.touring .stagefoot{opacity:0;transition:opacity .4s}
+body.touring #gl{cursor:default}
+
 .stagefoot{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;
   justify-content:center;gap:20px;padding:13px 18px;flex-wrap:wrap;
   background:linear-gradient(to top,rgba(5,7,13,.92),rgba(5,7,13,0));z-index:4}
@@ -240,6 +252,7 @@ h1{font-size:29px;font-weight:700;letter-spacing:-.03em;margin:0 0 7px;line-heig
   <div id="labels"></div>
   <div class="stats" id="stats"></div>
   <div class="ins" id="ins"></div>
+  <div id="cap"></div>
   <div class="stagefoot">
     <span class="lg"><i class="ring"></i>One effective dose</span>
     <span class="lg"><i style="background:var(--short)"></i>Missing</span>
@@ -389,7 +402,7 @@ function floorTex(){
 
 /* ---------------- scene ---------------- */
 var renderer,scene,camera,group,raycaster,pointer,grain,plinth,plinthRim;
-var cam={th:-0.30,ph:1.04,r:11,auto:true,idle:0,sway:0};
+var cam={th:-0.30,ph:1.04,r:11,fit:11,auto:true,idle:0,sway:0};
 var drag=null,hover=null,labelEls=[];
 
 function initGL(){
@@ -553,7 +566,9 @@ function fitCamera(){
   var hHalf=Math.atan(Math.tan(vHalf)*camera.aspect);
   var rH=halfW/Math.max(.08,Math.tan(hHalf));
   var rV=2.45/Math.tan(vHalf);
-  cam.r=Math.min(23,Math.max(rH,rV)*1.14);
+  cam.fit=Math.min(23,Math.max(rH,rV)*1.14);
+  cam.r=cam.fit;
+  if(state.demo&&state.demo.zoom) state.demo.r=cam.fit*state.demo.zoom;
 }
 function resize(){
   var st=document.getElementById("stage");
@@ -896,30 +911,70 @@ function load(pr){
 }
 
 /* ---------------- guided tour ---------------- */
-function camTo(th,ph,r){ if(!state.demo)return; state.demo.th=th; state.demo.ph=ph; state.demo.r=r||null; }
+function camTo(th,ph,zoom){
+  if(!state.demo) return;
+  state.demo.th=th; state.demo.ph=ph;
+  state.demo.zoom=zoom||1;
+  state.demo.r=(cam.fit||11)*state.demo.zoom;
+}
 function sbTo(id){
   var el=document.getElementById(id),sc=document.querySelector(".barscroll");
   if(el&&sc) sc.scrollTo({top:Math.max(0,el.offsetTop-8),behavior:"smooth"});
 }
 function byId(id){ for(var i=0;i<PRODUCTS.length;i++) if(PRODUCTS[i].id===id) return PRODUCTS[i]; }
 
+function cap(html){
+  var c=document.getElementById("cap");
+  if(!html){ c.classList.remove("on"); return; }
+  c.classList.remove("on");
+  setTimeout(function(){
+    if(!state.demo) return;
+    c.innerHTML="<b>"+html+"</b>"; c.classList.add("on");
+  },260);
+}
+function setEdit(on){
+  state.edit=on; renderEditor(state.recs);
+  if(on) sbTo("ed");
+}
+
 var SCRIPT=[
- {t:0,    go:function(){ load(byId("blend")); sbTo("detail"); camTo(-0.55,1.09); }},
- {t:2600, go:function(){ select(3); camTo(0.10,0.97); }},
- {t:7200, go:function(){ camTo(0.34,1.02); }},
- {t:9800, go:function(){ select(null); sbTo("fx"); camTo(-0.20,1.12); }},
- {t:13500,go:function(){ load(byId("open")); sbTo("fx"); camTo(0.22,1.00); }},
- {t:18500,go:function(){ camTo(-0.30,1.06); }},
- {t:21500,go:function(){ load(byId("blend")); sbTo("fx"); camTo(0.0,1.04); }},
- {t:26000,go:function(){ stopDemo(); }}
+ {t:0,     go:function(){ load(byId("blend")); setEdit(false); camTo(-0.52,1.10,1.00);
+                          cap('A <em>proprietary blend</em> hides the dose of everything inside it.'); }},
+ {t:4200,  go:function(){ camTo(0.30,1.00,0.98);
+                          cap('But the label must list them <em>heaviest first</em>.'); }},
+ {t:8200,  go:function(){ select(3); sbTo("detail"); camTo(0.06,0.95,0.84);
+                          cap('So the ceiling is arithmetic.'); }},
+ {t:12000, go:function(){ cap('L-Citrulline sits 2nd in a 2,400 mg blend.'); }},
+ {t:16000, go:function(){ camTo(0.26,0.99,0.80);
+                          cap('It cannot exceed 1,200 mg. A dose is <em>6,000</em>.'); }},
+ {t:20500, go:function(){ select(null); sbTo("fx"); camTo(-0.22,1.12,1.02);
+                          cap('Now weigh the whole formula.'); }},
+ {t:24500, go:function(){ cap('Dosing it properly needs <em>13,616 mg</em>. The scoop holds <em>9,500</em>.'); }},
+ {t:29500, go:function(){ camTo(0.10,1.06,0.96);
+                          cap('<s>It does not fit inside its own scoop.</s>'); }},
+ {t:34000, go:function(){ load(byId("greens")); sbTo("fx"); camTo(-0.26,1.04,1.00);
+                          cap('A greens powder: <s>0 of 9</s> at an effective dose.'); }},
+ {t:39000, go:function(){ load(byId("open")); sbTo("fx"); camTo(0.24,1.00,0.98);
+                          cap('A fully disclosed label: <em>7 of 7</em>.'); }},
+ {t:44000, go:function(){ camTo(-0.18,1.07,0.94);
+                          cap('Every dose stated. Every one in range.'); }},
+ {t:48500, go:function(){ load(byId("blend")); setEdit(true); camTo(0.0,1.05,1.00);
+                          cap('Put your own label in and check it.'); }},
+ {t:53500, go:function(){ setEdit(false); camTo(-0.30,1.06,1.02);
+                          cap('Free. Open source. Nothing leaves your browser.'); }},
+ {t:58500, go:function(){ cap(""); }},
+ {t:59600, go:function(){ stopDemo(); }}
 ];
 function startDemo(){
-  state.demo={t0:performance.now(),i:0,th:cam.th,ph:cam.ph,r:null};
+  state.demo={t0:performance.now(),i:0,th:cam.th,ph:cam.ph,r:cam.r,zoom:1};
   cam.auto=false;
+  document.body.classList.add("touring");
   document.getElementById("demoBtn").textContent="■";
 }
 function stopDemo(){
   state.demo=null; cam.auto=true; cam.sway=0;
+  document.body.classList.remove("touring");
+  var c=document.getElementById("cap"); if(c){ c.classList.remove("on"); c.innerHTML=""; }
   var b=document.getElementById("demoBtn"); if(b) b.textContent="▶";
 }
 function stepDemo(){
