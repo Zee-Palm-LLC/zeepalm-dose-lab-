@@ -52,3 +52,28 @@ not the chrome. Or OBS at 1920x1080, 60fps, for a sharper result.
   their own. Trim to 0:00–0:34 if you want it under 40s — that ends on
   "It does not fit inside its own scoop," which is the strongest stopping point.
 - **Still for the OG image** — pause at 0:12 or 0:36, crop to 1200x630.
+
+## Voiceover script
+
+Thirteen lines, each cued to a beat of the guided tour. Timings are seconds from the
+start of the 60-second take. Every line has at least 0.6s of headroom before the next
+cue, so a natural read will fit without rushing.
+
+| Cue | Line |
+| --- | --- |
+| 0:00.4 | A proprietary blend hides the dose of everything inside it. |
+| 0:04.6 | But the label still has to list them heaviest first. |
+| 0:08.6 | So the ceiling is just arithmetic. |
+| 0:12.4 | L citrulline is second in a twenty four hundred milligram blend. |
+| 0:16.4 | It cannot exceed twelve hundred. Trials use six thousand. |
+| 0:20.9 | Now weigh the whole formula. |
+| 0:24.9 | Together, the studied ranges need thirteen thousand milligrams. |
+| 0:29.9 | The scoop holds nine and a half. It does not fit. |
+| 0:34.4 | A greens powder. None of its nine reach their range. |
+| 0:39.4 | A fully disclosed label. Seven out of seven. |
+| 0:44.4 | Every dose stated. Every one of them in range. |
+| 0:48.9 | Put your own label in, and check it. |
+| 0:53.9 | Free, open source, and nothing leaves your browser. |
+
+Record it in one take against the silent 16:9 cut. If a line lands slightly late it
+still works — the captions on screen carry the meaning, the voice is reinforcement.
