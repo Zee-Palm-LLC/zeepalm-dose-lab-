@@ -582,6 +582,8 @@ function tick(t){
   requestAnimationFrame(tick);
   if(state.demo&&!drag){
     stepDemo();
+  }
+  if(state.demo&&!drag){
     cam.th+=(state.demo.th-cam.th)*0.030;
     cam.ph+=(state.demo.ph-cam.ph)*0.030;
     if(state.demo.r) cam.r+=(state.demo.r-cam.r)*0.030;
