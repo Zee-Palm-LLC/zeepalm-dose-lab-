@@ -60,6 +60,27 @@ mass would make everything but the largest ingredient invisible. Filling each vi
 its own target puts the ring at one height across the row, which is what makes a gap
 readable at a glance.
 
+## The data
+
+The numbers live in JSON, not in the app, so they can be read and corrected without
+going near the rendering code.
+
+| File | What's in it |
+| ---- | ------------ |
+| [`data/ingredients.json`](data/ingredients.json) | 26 ingredients — effective-dose range, unit, evidence grade, mechanism, caveat |
+| [`data/products.json`](data/products.json) | The three example labels |
+
+`effectiveDose.low` is the threshold everything is measured against — it is the single
+most important number in the project, and the one most worth arguing about.
+
+**Corrections are welcome by pull request.** Please cite a source. These are commonly
+cited ranges from human trials in healthy adults; reputable sources disagree at the
+margins, and we would rather be corrected in public than be quietly wrong.
+
+Both files are fetched at runtime, so the page needs to be served over HTTP rather
+than opened from the filesystem. Opening `index.html` directly will show you a message
+saying exactly that.
+
 ## What it isn't
 
 - **Not a lab assay.** It reads what a label declares. It cannot tell you what is in
@@ -79,10 +100,11 @@ It is one static HTML file with no build step.
 python3 -m http.server 8000
 ```
 
-Then open <http://localhost:8000>.
+Then open <http://localhost:8000>. A server is required — the page fetches its data
+files, which browsers block on `file://`.
 
-Three.js is loaded from a CDN; everything else — geometry, analysis, ingredient data —
-is in the file. Nothing you type is sent anywhere.
+Three.js is loaded from a CDN; the geometry and the analysis are in `index.html`, and
+the numbers are in `data/`. Nothing you type is sent anywhere.
 
 ## Privacy
 

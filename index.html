@@ -298,70 +298,39 @@ h1{font-size:29px;font-weight:700;letter-spacing:-.03em;margin:0 0 7px;line-heig
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
-const ING={
- caffeine:{n:"Caffeine anhydrous",u:"mg",k:1,lo:200,hi:400,ev:"strong",does:"Blocks adenosine, so fatigue signalling is muted. The most reliably effective ergogenic aid there is.",note:"Roughly 3-6 mg per kg of bodyweight. Above about 400 mg in one sitting the returns stop and the side effects don't."},
- betaAlanine:{n:"Beta-alanine",u:"mg",k:1,lo:3200,hi:6400,ev:"strong",does:"Raises muscle carnosine, which buffers the acidity that ends a hard set. Helps most in the 60-240 second effort range.",note:"Works by saturating muscle carnosine over weeks, so a single dose does nothing acutely. The tingle is not the effect."},
- citrulline:{n:"L-Citrulline",u:"mg",k:1,lo:6000,hi:8000,ev:"strong",does:"Converts to arginine in the kidneys and raises nitric oxide, improving blood flow and reducing perceived effort.",note:"One of the most reliably underdosed ingredients in the category, because it is expensive and bulky."},
- citMalate:{n:"Citrulline malate (2:1)",u:"mg",k:1,lo:8000,hi:10000,ev:"strong",does:"Citrulline plus malate, an intermediate in aerobic energy production. Dosed higher because only part of the weight is citrulline.",note:"A 2:1 blend is only two-thirds citrulline, so 8 g of citrulline malate delivers about 5.3 g of citrulline."},
- creatine:{n:"Creatine monohydrate",u:"mg",k:1,lo:3000,hi:5000,ev:"strong",does:"Regenerates ATP during short maximal efforts. Adds reps at the top end and increases total training volume over time.",note:"The most studied sports supplement there is. Monohydrate is the researched form; the exotic ones cost more and do not outperform it."},
- betaine:{n:"Betaine anhydrous",u:"mg",k:1,lo:2400,hi:4000,ev:"moderate",does:"An osmolyte that helps cells hold water under load, with modest evidence for power output.",note:"Effective doses in trials sit between 2,400 and 4,000 mg taken before training."},
- taurine:{n:"Taurine",u:"mg",k:1,lo:1000,hi:2000,ev:"moderate",does:"Regulates calcium handling and cell volume in working muscle. Mild but consistently measurable.",note:"Cheap, well tolerated, and frequently included at a fraction of the trial dose."},
- tyrosine:{n:"L-Tyrosine",u:"mg",k:1,lo:500,hi:2000,ev:"moderate",does:"A precursor to dopamine and noradrenaline, which get depleted under acute stress.",note:"Evidence is for acute stress and sleep deprivation rather than for training performance."},
- theanine:{n:"L-Theanine",u:"mg",k:1,lo:100,hi:200,ev:"moderate",does:"Raises alpha wave activity. Paired with caffeine it keeps the alertness and removes the edge.",note:"Usually paired with caffeine at roughly 1:1 to 2:1 to blunt the jitter."},
- alphaGPC:{n:"Alpha-GPC",u:"mg",k:1,lo:300,hi:600,ev:"moderate",does:"A choline source that crosses into the brain, used for acetylcholine synthesis and power output.",note:"One of the few nootropic additions with a defensible dose range."},
- ashwagandha:{n:"Ashwagandha extract",u:"mg",k:1,lo:300,hi:600,ev:"moderate",does:"An adaptogen with reasonable evidence for lowering cortisol and perceived stress.",note:"Trials use standardised root extracts. An unstandardised powder at 50 mg is not the same product."},
- rhodiola:{n:"Rhodiola rosea",u:"mg",k:1,lo:200,hi:400,ev:"moderate",does:"Studied for fatigue resistance and perceived exertion rather than raw strength.",note:"Standardised to rosavins and salidroside; unstandardised material tells you nothing."},
- beetroot:{n:"Beetroot extract",u:"mg",k:1,lo:500,hi:1000,ev:"moderate",does:"A nitrate source. Nitrate converts to nitric oxide and lowers the oxygen cost of submaximal work.",note:"What matters is the nitrate content, which most labels do not declare at all."},
- hmb:{n:"HMB",u:"mg",k:1,lo:3000,hi:3000,ev:"weak",does:"A leucine metabolite studied for limiting muscle breakdown during hard training or a deficit.",note:"Trial dose is 3 g. Benefits look real in untrained people and largely vanish in trained ones."},
- arginine:{n:"L-Arginine",u:"mg",k:1,lo:6000,hi:10000,ev:"weak",does:"Intended as a nitric oxide precursor, but most of an oral dose is destroyed before it reaches circulation.",note:"Poor oral bioavailability - it is broken down before it does much. Citrulline raises arginine levels more effectively than arginine does."},
- bcaa:{n:"BCAAs",u:"mg",k:1,lo:5000,hi:10000,ev:"weak",does:"Three amino acids your body cannot make. Already present in every complete protein you eat.",note:"Largely redundant if daily protein is adequate, because whole protein already contains them."},
- glutamine:{n:"L-Glutamine",u:"mg",k:1,lo:5000,hi:10000,ev:"weak",does:"The most abundant amino acid in the body. Genuinely useful clinically; hard to show a benefit in healthy trained adults.",note:"Well evidenced in clinical settings, thin evidence for healthy trained adults."},
- tribulus:{n:"Tribulus terrestris",u:"mg",k:1,lo:0,hi:0,ev:"none",does:"Marketed as a testosterone booster. Controlled trials do not find that effect.",note:"Repeatedly tested for raising testosterone and repeatedly found not to. There is no dose that fixes this."},
- huperzine:{n:"Huperzine A",u:"mcg",k:0.001,lo:50,hi:200,ev:"weak",does:"An acetylcholinesterase inhibitor, so acetylcholine lingers. Active in microgrammes.",note:"Active in microgrammes, which makes it a cheap way to lengthen an ingredient list."},
- niacin:{n:"Niacin (vitamin B3)",u:"mg",k:1,lo:16,hi:35,ev:"caution",does:"An essential B vitamin. In excess it dilates skin capillaries, which is the flush.",note:"The adult RDA is about 16 mg. Doses above that do nothing extra nutritionally, but from roughly 30 mg upward nicotinic acid causes flushing - a warm prickling across the skin that is very often mistaken for the product kicking in."},
- vitD:{n:"Vitamin D3",u:"IU",k:0.000025,lo:1000,hi:4000,ev:"strong",does:"A prohormone made in skin from sunlight. Deficiency is common indoors and at high latitudes.",note:"Meaningful supplementation starts around 1,000 IU for most adults."},
- magnesium:{n:"Magnesium",u:"mg",k:1,lo:200,hi:400,ev:"strong",does:"A cofactor in hundreds of enzyme reactions including muscle contraction and sleep regulation.",note:"Elemental magnesium, not the weight of the salt. Magnesium oxide is roughly 4% absorbed - the cheapest form on the shelf."},
- zinc:{n:"Zinc",u:"mg",k:1,lo:15,hi:30,ev:"strong",does:"Essential for immune function and hormone production. Lost in sweat, so athletes run low more often.",note:"Upper limit is about 40 mg a day; chronic excess interferes with copper."},
- omega3:{n:"EPA + DHA",u:"mg",k:1,lo:1000,hi:3000,ev:"strong",does:"Long-chain fats that regulate the inflammatory response and are structural in cell membranes.",note:"Read the EPA and DHA figures, not the total fish oil weight. A 1,000 mg capsule often carries 300 mg of actual omega-3."},
- collagen:{n:"Collagen peptides",u:"mg",k:1,lo:10000,hi:15000,ev:"moderate",does:"Supplies glycine and proline for connective tissue. Taken with vitamin C before loading the tendon.",note:"Trials use 10-15 g. Anything under a gram is there for the ingredient list."},
- sodium:{n:"Sodium",u:"mg",k:1,lo:300,hi:1000,ev:"strong",does:"The electrolyte you lose most of in sweat. Drives fluid retention and nerve conduction.",note:"For sweat replacement during long or hot sessions. Context dependent rather than universally needed."}
-};
+/* Ingredient and label data live in data/*.json so the dose ranges can be
+   reviewed and corrected without reading through the app. */
+var ING={}, PRODUCTS=[], COLOR={};
 
-const PRODUCTS=[
-{id:"blend",servingMg:9500,tab:"Blend-style pre-workout",name:"EXAMPLE PRE-WORKOUT — BLEND STYLE",serving:"1 scoop (9.5 g)",servings:30,
- blend:{name:"Performance Matrix™",total:2400},
- rows:[
-  {ing:"niacin",amt:30},
-  {ing:"caffeine",amt:200},
-  {ing:"betaAlanine",blend:1},
-  {ing:"citrulline",blend:1},
-  {ing:"betaine",blend:1},
-  {ing:"taurine",blend:1},
-  {ing:"tyrosine",blend:1},
-  {ing:"alphaGPC",blend:1},
-  {ing:"huperzine",blend:1}
- ]},
-{id:"open",servingMg:24000,tab:"Fully disclosed pre-workout",name:"EXAMPLE PRE-WORKOUT — FULLY DISCLOSED",serving:"2 scoops (24 g)",servings:20,blend:null,
- rows:[
-  {ing:"citrulline",amt:6000},{ing:"betaAlanine",amt:3200},{ing:"creatine",amt:5000},
-  {ing:"betaine",amt:2500},{ing:"caffeine",amt:300},{ing:"theanine",amt:200},{ing:"tyrosine",amt:1000}
- ]},
-{id:"greens",servingMg:8000,tab:"Greens & recovery powder",name:"EXAMPLE GREENS & RECOVERY POWDER",serving:"1 scoop (8 g)",servings:30,blend:null,
- rows:[
-  {ing:"vitD",amt:600},{ing:"magnesium",amt:50},{ing:"zinc",amt:2},
-  {ing:"ashwagandha",amt:50},{ing:"rhodiola",amt:25},{ing:"glutamine",amt:500},
-  {ing:"collagen",amt:2000},{ing:"beetroot",amt:100},{ing:"tribulus",amt:100}
- ]}
-];
-const COLOR={
- caffeine:"#F2EFE8",betaAlanine:"#F6F3ED",citrulline:"#FBF8F2",citMalate:"#F3EEE4",
- creatine:"#FFFFFF",betaine:"#F0EDE6",taurine:"#F7F4EE",tyrosine:"#F2EEE6",
- theanine:"#EFEBE1",alphaGPC:"#E6DFCF",ashwagandha:"#C9A472",rhodiola:"#B08355",
- beetroot:"#A51F55",hmb:"#F4F1EA",arginine:"#F6F3EC",bcaa:"#F1EEE7",
- glutamine:"#F8F5EF",tribulus:"#9FAC63",huperzine:"#D6E0C4",niacin:"#F6E39A",
- vitD:"#FFD277",magnesium:"#E8E8E4",zinc:"#D6DADE",omega3:"#FFBE4F",
- collagen:"#EDE2CE",sodium:"#FFFFFF"
-};
+function loadDoseData(){
+  function grab(url){
+    return fetch(url).then(function(r){
+      if(!r.ok) throw new Error(url+" returned "+r.status);
+      return r.json();
+    });
+  }
+  return Promise.all([grab("data/ingredients.json"),grab("data/products.json")])
+    .then(function(res){
+      var ing=res[0].ingredients||{}, prods=res[1].products||[];
+      Object.keys(ing).forEach(function(key){
+        var v=ing[key];
+        ING[key]={n:v.name,u:v.unit,k:v.mgPerUnit,
+                  lo:v.effectiveDose.low,hi:v.effectiveDose.high,
+                  ev:v.evidence,does:v.mechanism,note:v.note};
+        COLOR[key]=v.colour;
+      });
+      PRODUCTS=prods.map(function(p){
+        return {id:p.id,tab:p.tab,name:p.name,serving:p.serving,
+                servingMg:p.servingMg,servings:p.servingsPerContainer,
+                blend:p.blend?{name:p.blend.name,total:p.blend.totalMg}:null,
+                rows:p.rows.map(function(r){
+                  return r.inBlend?{ing:r.ingredient,blend:1}
+                                  :{ing:r.ingredient,amt:r.amount};
+                })};
+      });
+      if(!PRODUCTS.length) throw new Error("no products in data/products.json");
+    });
+}
 </script>
 
 <script>
@@ -976,14 +945,29 @@ addEventListener("keydown",function(e){
 
 if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches) cam.auto=false;
 
-if(!window.THREE){
+function stageMessage(html){
   document.getElementById("stage").innerHTML=
     '<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;'+
-    'color:#93A0B4;font-family:Sora,sans-serif;font-size:14px;text-align:center;padding:30px">'+
-    'The 3D view could not load. Check your connection and reload.</div>';
+    'color:#93A0B4;font-family:Sora,-apple-system,sans-serif;font-size:14px;line-height:1.6;'+
+    'text-align:center;padding:30px;max-width:46ch;margin:0 auto">'+html+'</div>';
+}
+
+if(!window.THREE){
+  stageMessage("The 3D view could not load. Check your connection and reload.");
 } else {
-  initGL();
-  load(PRODUCTS[0]);
+  loadDoseData().then(function(){
+    initGL();
+    load(PRODUCTS[0]);
+  }).catch(function(err){
+    var local = location.protocol === "file:";
+    stageMessage(
+      "<b style=\"color:#EDF2F9\">Could not load the ingredient data.</b><br><br>"+
+      (local
+        ? "This page reads <code>data/ingredients.json</code> at runtime, which browsers block on <code>file://</code>.<br><br>"+
+          "Serve the folder instead:<br><code style=\"color:#7FD8F5\">python3 -m http.server</code>"
+        : "<span style=\"font-family:monospace;font-size:12px\">"+String(err.message||err)+"</span>")
+    );
+  });
 }
 })();
 </script>

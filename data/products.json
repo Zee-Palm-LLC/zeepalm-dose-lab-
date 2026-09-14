@@ -1,0 +1,146 @@
+{
+  "_README": "Example supplement labels. Every one is invented for teaching - none corresponds to a real product.",
+  "_fields": {
+    "servingMg": "Total mass of one serving in mg, including flavouring and excipients. Used by the mass check.",
+    "blend": "Proprietary blend, or null. Rows with inBlend:true sit inside it, in label order - descending by weight, per 21 CFR 101.36.",
+    "rows[].amount": "Declared amount in the ingredient's unit. Absent for blend members, because the label does not state it."
+  },
+  "products": [
+    {
+      "id": "blend",
+      "tab": "Blend-style pre-workout",
+      "name": "EXAMPLE PRE-WORKOUT — BLEND STYLE",
+      "serving": "1 scoop (9.5 g)",
+      "servingMg": 9500,
+      "servingsPerContainer": 30,
+      "blend": {
+        "name": "Performance Matrix™",
+        "totalMg": 2400
+      },
+      "rows": [
+        {
+          "ingredient": "niacin",
+          "amount": 30
+        },
+        {
+          "ingredient": "caffeine",
+          "amount": 200
+        },
+        {
+          "ingredient": "betaAlanine",
+          "inBlend": true
+        },
+        {
+          "ingredient": "citrulline",
+          "inBlend": true
+        },
+        {
+          "ingredient": "betaine",
+          "inBlend": true
+        },
+        {
+          "ingredient": "taurine",
+          "inBlend": true
+        },
+        {
+          "ingredient": "tyrosine",
+          "inBlend": true
+        },
+        {
+          "ingredient": "alphaGPC",
+          "inBlend": true
+        },
+        {
+          "ingredient": "huperzine",
+          "inBlend": true
+        }
+      ]
+    },
+    {
+      "id": "open",
+      "tab": "Fully disclosed pre-workout",
+      "name": "EXAMPLE PRE-WORKOUT — FULLY DISCLOSED",
+      "serving": "2 scoops (24 g)",
+      "servingMg": 24000,
+      "servingsPerContainer": 20,
+      "blend": null,
+      "rows": [
+        {
+          "ingredient": "citrulline",
+          "amount": 6000
+        },
+        {
+          "ingredient": "betaAlanine",
+          "amount": 3200
+        },
+        {
+          "ingredient": "creatine",
+          "amount": 5000
+        },
+        {
+          "ingredient": "betaine",
+          "amount": 2500
+        },
+        {
+          "ingredient": "caffeine",
+          "amount": 300
+        },
+        {
+          "ingredient": "theanine",
+          "amount": 200
+        },
+        {
+          "ingredient": "tyrosine",
+          "amount": 1000
+        }
+      ]
+    },
+    {
+      "id": "greens",
+      "tab": "Greens & recovery powder",
+      "name": "EXAMPLE GREENS & RECOVERY POWDER",
+      "serving": "1 scoop (8 g)",
+      "servingMg": 8000,
+      "servingsPerContainer": 30,
+      "blend": null,
+      "rows": [
+        {
+          "ingredient": "vitD",
+          "amount": 600
+        },
+        {
+          "ingredient": "magnesium",
+          "amount": 50
+        },
+        {
+          "ingredient": "zinc",
+          "amount": 2
+        },
+        {
+          "ingredient": "ashwagandha",
+          "amount": 50
+        },
+        {
+          "ingredient": "rhodiola",
+          "amount": 25
+        },
+        {
+          "ingredient": "glutamine",
+          "amount": 500
+        },
+        {
+          "ingredient": "collagen",
+          "amount": 2000
+        },
+        {
+          "ingredient": "beetroot",
+          "amount": 100
+        },
+        {
+          "ingredient": "tribulus",
+          "amount": 100
+        }
+      ]
+    }
+  ]
+}
